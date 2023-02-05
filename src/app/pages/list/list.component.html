@@ -2,9 +2,8 @@
 
 <!-- TODO: Mostrar el componente hijo -->
 <div *ngIf="(escapeRooms$ | async) as escapeRoomsList">
-  <ul>
-    <li *ngFor="let escapeRoom of escapeRoomsList">
-      {{ escapeRoom.name }}
-    </li>
-  </ul>
+  <app-room
+    *ngFor="let escapeRoom of escapeRoomsList"
+    [roomSon] = "escapeRoom"  
+  ></app-room>
 </div>
