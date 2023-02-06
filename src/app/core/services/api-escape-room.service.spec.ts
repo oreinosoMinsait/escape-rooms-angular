@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { EscapeRoomsService } from './escape-rooms.service';
+import { ApiEscapeRoomService } from './api-escape-room.service';
 
-describe('EscapeRoomsService', () => {
-  let service: EscapeRoomsService;
+describe('ApiEscapeRoomService', () => {
+  let service: ApiEscapeRoomService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(EscapeRoomsService);
+    service = TestBed.inject(ApiEscapeRoomService);
   });
 
   it('should be created', () => {

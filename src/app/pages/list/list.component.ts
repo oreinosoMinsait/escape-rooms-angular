@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { EscapeRoomsService } from 'src/app/core/services/escape-rooms.service';
+import { TransformEscapeRoomService } from 'src/app/core/services/transform-escape-room.service';
 import { EscapeRoomI } from 'src/app/core/services/models/escape-rooms.models';
-import { Observable, take } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list',
@@ -14,7 +14,7 @@ export class ListComponent implements OnInit {
   public escapeRooms$?: Observable<EscapeRoomI[]>;
 
   constructor(
-    private escapeRoomService: EscapeRoomsService
+    private transformEscapeRoomService: TransformEscapeRoomService
   ) { }
 
   ngOnInit(): void {
@@ -22,10 +22,7 @@ export class ListComponent implements OnInit {
   }
 
   public getEscapeRooms() {
-    this.escapeRooms$ = this.escapeRoomService.getEscapeRooms().pipe(
-      take(1)
-    );
+    this.escapeRooms$ = this.transformEscapeRoomService.getTransformedEscapeRooms();
   }
-
 
 }

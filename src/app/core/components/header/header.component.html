@@ -1,0 +1,12 @@
+<header>
+  <nav>
+    <a
+      *ngFor="let page of pages"
+      class="navbar__link"
+      [routerLink]="[page.path]"
+      [ngClass]="{
+        'navbar__link--active': page.isActive
+      }"
+    >{{ page.text }}</a>
+  </nav>
+</header>

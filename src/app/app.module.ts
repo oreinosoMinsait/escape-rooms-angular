@@ -3,9 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EscapeRoomsService } from './core/services/escape-rooms.service';
+import { ApiEscapeRoomService } from './core/services/api-escape-room.service';
+import { TransformEscapeRoomService } from './core/services/transform-escape-room.service';
 
 import { HttpClientModule } from '@angular/common/http';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -14,9 +16,13 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     HttpClientModule, // Se importa después de BrowserModule
-    AppRoutingModule
+    AppRoutingModule,
+    CoreModule // El único sitio en el que se importa core
   ],
-  providers: [EscapeRoomsService],
+  providers: [
+    ApiEscapeRoomService,
+    TransformEscapeRoomService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

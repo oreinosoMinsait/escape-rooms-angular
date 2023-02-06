@@ -1,6 +1,6 @@
 import { ApiEscapeRoomI, EscapeRoomI } from "./escape-rooms.models";
 
-export function escapeRoomTransformer(apiEscapeRooms: ApiEscapeRoomI[]): EscapeRoomI[] {
+export function transformEscapeRooms(apiEscapeRooms: ApiEscapeRoomI[]): EscapeRoomI[] {
 
   return apiEscapeRooms.map(
     (room) => ({
