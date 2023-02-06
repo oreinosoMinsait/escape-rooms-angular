@@ -1,4 +1,10 @@
-<img [src]="roomSon?.image_url" [alt]="roomSon?.name">
-{{ roomSon?.name }}
-{{ roomSon?.address }}
-<br>
+<a
+  [routerLink]="['/list' , roomSon?.id]"
+>
+    <img
+      [src]="roomSon?.image_url"
+      [alt]="roomSon?.name"
+    >
+    {{ roomSon?.name }}
+    {{ roomSon?.address }}
+</a>

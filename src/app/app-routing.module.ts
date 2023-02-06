@@ -8,10 +8,13 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
   },
   { 
+    path: 'list/:roomId',
+    loadChildren: () => import('./pages/detail/detail.module').then(m => m.DetailModule)
+  },
+  { 
     path: 'list',
     loadChildren: () => import('./pages/list/list.module').then(m => m.ListModule)
   },
-  // TODO: Añadir vista detalle
 ];
 
 @NgModule({

@@ -1,7 +1,4 @@
-<!-- <p>list works!</p> -->
-
-<!-- TODO: Mostrar el componente hijo -->
-<div *ngIf="(escapeRooms$ | async) as escapeRoomsList">
+<div class="list" *ngIf="(escapeRooms$ | async) as escapeRoomsList">
   <app-room
     *ngFor="let escapeRoom of escapeRoomsList"
     [roomSon] = "escapeRoom"  

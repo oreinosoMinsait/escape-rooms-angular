@@ -15,5 +15,10 @@ export class ApiEscapeRoomService {
 
     return this.http.get<ApiEscapeRoomI[]>(environment.API_URL);
   }
+
+  public getApiEscapeRoomId(id: string): Observable<ApiEscapeRoomI> {
+
+    return this.http.get<ApiEscapeRoomI>(environment.API_URL + '/' + id);
+  }
   
 }
