@@ -1,0 +1,7 @@
+.navbar__link {
+  text-decoration: none;
+  color: black;
+}
+.navbar__link--active {
+  font-weight: bold;
+}/*# sourceMappingURL=header.component.css.map */

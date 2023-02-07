@@ -1,6 +1,35 @@
+<h3>Buscar escape room:</h3>
+<label for="filterId"></label>
+<input
+  id="filterId"
+  type="text"
+  [(ngModel)]="filterWords"
+>
+
 <div class="list" *ngIf="(escapeRooms$ | async) as escapeRoomsList">
+
   <app-room
-    *ngFor="let escapeRoom of escapeRoomsList"
-    [roomSon] = "escapeRoom"  
+    *ngFor="let escapeRoom of (escapeRoomsList | filterNames:filterWords | pagination:pageSize:nPage)"
+    [roomSon] = "escapeRoom"
   ></app-room>
+
+  <label for="pageSizeId">Tamaño de la página:</label>
+  <select id="pageSizeId" [(ngModel)]="pageSize">
+    <option
+      *ngFor="let size of pageSizes"
+      [ngValue]="size">
+        {{ size }}
+    </option>
+  </select>
+
+  <label for="pageNumberId">Página:</label>
+  <select id="pageNumberId" [(ngModel)]="nPage">
+    <option
+      *ngFor="let page of [].constructor(escapeRoomsList.length/pageSize); let i = index"
+      [ngValue]="i+1">
+        {{ i+1 }}
+    </option>
+    <div *ngIf="escapeRoomsList.length > 3">{{ escapeRoomsList.length }}</div>
+  </select>
+
 </div>

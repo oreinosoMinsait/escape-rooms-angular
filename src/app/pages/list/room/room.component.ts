@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { EscapeRoomI } from 'src/app/core/services/models/escape-rooms.models';
 
 @Component({
@@ -6,12 +6,8 @@ import { EscapeRoomI } from 'src/app/core/services/models/escape-rooms.models';
   templateUrl: './room.component.html',
   styleUrls: ['./room.component.scss']
 })
-export class RoomComponent implements OnInit {
+export class RoomComponent {
 
   @Input() roomSon?: EscapeRoomI;
-
-  ngOnInit(): void {
-    console.log(this.roomSon);
-  }
 
 }

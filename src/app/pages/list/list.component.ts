@@ -12,6 +12,12 @@ import { Observable } from 'rxjs';
 export class ListComponent implements OnInit {
 
   public escapeRooms$?: Observable<EscapeRoomI[]>;
+  public filterWords = '';
+  public pageSizes = [5, 10, 20];
+  public pageSize = this.pageSizes[0]; // Valor inicial
+  public nPage = 1;
+  public totalPages = 1;
+
 
   constructor(
     private transformEscapeRoomService: TransformEscapeRoomService
