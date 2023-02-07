@@ -29,6 +29,7 @@ export class ListComponent implements OnInit {
 
   public getEscapeRooms() {
     this.escapeRooms$ = this.transformEscapeRoomService.getTransformedEscapeRooms();
+    console.log(this.escapeRooms$);
   }
 
 }

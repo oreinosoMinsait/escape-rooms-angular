@@ -23,13 +23,28 @@
   </select>
 
   <label for="pageNumberId">Página:</label>
+
   <select id="pageNumberId" [(ngModel)]="nPage">
-    <option
-      *ngFor="let page of [].constructor(escapeRoomsList.length/pageSize); let i = index"
-      [ngValue]="i+1">
-        {{ i+1 }}
-    </option>
-    <div *ngIf="escapeRoomsList.length > 3">{{ escapeRoomsList.length }}</div>
+
+    <!-- If -->
+    <ng-container *ngIf="escapeRoomsList.length/pageSize % 1 === 0; then zero; else notZero"></ng-container>
+    <!-- True -->
+    <ng-template #zero>
+      <option
+        *ngFor="let page of [].constructor(escapeRoomsList.length/pageSize); let i = index"
+        [ngValue]="i+1">
+          {{ i+1 }}
+      </option>
+    </ng-template>
+    <!-- False -->
+    <ng-template #notZero>
+      <option
+        *ngFor="let page of [].constructor(escapeRoomsList.length/pageSize - (escapeRoomsList.length/pageSize) % 1 + 1); let i = index"
+        [ngValue]="i+1">
+          {{ i+1 }}
+      </option>
+    </ng-template>
+
   </select>
 
 </div>
