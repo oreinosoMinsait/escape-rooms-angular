@@ -1,10 +1,12 @@
-<h3>Buscar escape room:</h3>
-<label for="filterId"></label>
-<input
-  id="filterId"
-  type="text"
-  [(ngModel)]="filterWords"
->
+<div class="search">
+  <h3>Buscar escape room:</h3>
+  <label for="filterId"></label>
+  <input
+    id="filterId"
+    type="text"
+    [(ngModel)]="filterWords"
+  >
+</div>
 
 <div class="list" *ngIf="(escapeRooms$ | async) as escapeRoomsList">
 

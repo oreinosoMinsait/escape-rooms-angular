@@ -1,12 +1,19 @@
-<div *ngIf="roomSon" class="room">
-  <a
-  [routerLink]="['/list' , roomSon?.id]"
-  >
-    <img
-      [src]="roomSon.image_url"
-      [alt]="roomSon.name"
-    >
-      {{ roomSon.name }}
-      {{ roomSon.address }}
-  </a>
+<div
+*ngIf="roomSon" class="room"
+[routerLink]="['/list' , roomSon.id]">
+
+    <div class="room__img">
+      <img [src]="roomSon.image_url" [alt]="roomSon.name">
+    </div>
+
+    <div class="room__info">
+      <div class="room__name">
+        {{ roomSon.name }}
+      </div>
+  
+      <div class="room__address">
+        {{ roomSon.address }}
+      </div>
+    </div>
+
 </div>
