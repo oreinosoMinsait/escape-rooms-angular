@@ -1,12 +1,18 @@
 <header>
-  <nav>
-    <a
+  <nav class="navbar">
+    <div class="navbar__logo">
+      <img src="assets/images/logo_navbar.svg" alt="logo">
+    </div>
+
+    <div class="navbar__options">
+      <a
       *ngFor="let page of pages"
       class="navbar__link"
       [routerLink]="[page.path]"
       [ngClass]="{
         'navbar__link--active': page.isActive
       }"
-    >{{ page.text }}</a>
+        >{{ page.text }}</a>
+    </div>
   </nav>
 </header>

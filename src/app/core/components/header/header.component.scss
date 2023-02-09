@@ -1,10 +1,47 @@
+@import 'src/styles/shared.scss';
+
+nav {
+  background-color: $DARK_BLUE;
+}
+
 .navbar {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &__logo {
+    font-size: 0px;
+    align-items: center;
+    margin-left: $NORMAL_MARGIN;
+
+    img {
+      width: 200px;
+    }
+  }
+
+  &__options {
+    display: flex;
+    align-items: center;
+    margin-right: $NORMAL_MARGIN;
+  }
+
   &__link {
+    margin: 0px $NORMAL_MARGIN; // vertical horizontal
     text-decoration: none;
-    color: black;
+    color: $TRUE_WHITE;
+
+    // Mobile first
+    font-size: $MOBILE_TITLES;
+
+    @media screen and (min-width: $LANDSCAPE) {
+      font-size: $LANDSCAPE_TITLES;
+    }
 
     &--active {
       font-weight: bold;
+      color: $ORANGE;
     }
   }
+
 }

@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'src/styles/shared.scss';
+
+body {
+  background-color: $WHITE;
+  margin: auto; // Mismo margen izquierda y derecha. Útil cuando se establece un ancho máximo
+  font-family: $FONT_TYPE;
+
+  // Establecer máximo ancho de contenido
+  @media screen and (min-width: $DESKTOP) {
+    max-width: 1200px;
+  }
+}

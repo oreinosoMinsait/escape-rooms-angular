@@ -13,18 +13,18 @@ export class HeaderComponent {
   public pages: RouterPage[] = [
     {
       path: '/home',
-      text: 'Inicio'
+      text: 'Inicio',
     },
     {
       path: '/list',
-      text: 'Lista'
+      text: 'Lista',
     }
   ]
 
   constructor(
     private router: Router
   ) {
-    // Poner isActive a true cuando se está en esa página
+    // Pone isActive a true cuando se está en esa página
     this.router.events.pipe(
       filter(e => e instanceof NavigationEnd)
     )

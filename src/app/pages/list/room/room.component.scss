@@ -1,3 +1,5 @@
+@import 'src/styles/shared.scss'; 
+
 :host {
   display: flex;
   flex-direction: column;
@@ -7,30 +9,39 @@
 .room {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   width: 50%;
-  border: 1px solid black;
-  padding: 10px;
-  margin: 10px;
+  border: 2px solid black;
+  padding: $SMALL_MARGIN;
+  margin: $SMALL_MARGIN;
   cursor: pointer;
+  background-color: $TRUE_WHITE;
+  border-radius: $SOFT_RADIUS;
 
-  &__img {
+  &__image {
     border: 1px solid black;
-  }
 
-  &__info {
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    img {
+      width: 75px;
+    }
   }
 
   &__name {
-    font-size: 16px;
+    font-size: $MOBILE_TITLES;
     font-weight: bold;
+
+    @media screen and (min-width: $LANDSCAPE) {
+      font-size: $LANDSCAPE_TITLES;
+    }
   }
 
   &__address {
-    font-size: 14px;
+    font-size: $LANDSCAPE_TITLES;
+
+    @media screen and (min-width: $LANDSCAPE) {
+      font-size: $LANDSCAPE_DESCRIPTION;
+    }
+
   }
 }

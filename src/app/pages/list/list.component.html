@@ -1,6 +1,6 @@
+<!-- Filtro búsqueda -->
 <div class="search">
-  <h3>Buscar escape room:</h3>
-  <label for="filterId"></label>
+  <label for="filterId">Buscar escape room:</label>
   <input
     id="filterId"
     type="text"
@@ -15,38 +15,44 @@
     [roomSon] = "escapeRoom"
   ></app-room>
 
-  <label for="pageSizeId">Tamaño de la página:</label>
-  <select id="pageSizeId" [(ngModel)]="pageSize">
-    <option
-      *ngFor="let size of pageSizes"
-      [ngValue]="size">
-        {{ size }}
-    </option>
-  </select>
+  <div class="page-layout">
 
-  <label for="pageNumberId">Página:</label>
+    <div class="page-layout__page-size">
+      <label for="pageSizeId">Tamaño página:</label>
+      <select id="pageSizeId" [(ngModel)]="pageSize">
+        <option
+          *ngFor="let size of pageSizes"
+          [ngValue]="size">
+            {{ size }}
+        </option>
+      </select>
+    </div>
 
-  <select id="pageNumberId" [(ngModel)]="nPage">
+    <div class="page-layout__pagination">
+      <!-- Paginación -->
+      <label for="pageNumberId">Página:</label>
+      <select id="pageNumberId" [(ngModel)]="nPage">
+        <!-- If -->
+        <ng-container *ngIf="escapeRoomsList.length/pageSize % 1 === 0; then zero; else notZero"></ng-container>
+        <!-- True -->
+        <ng-template #zero>  
+          <option
+            *ngFor="let page of [].constructor(escapeRoomsList.length/pageSize); let i = index"
+            [ngValue]="i+1">
+              {{ i+1 }}
+          </option>
+        </ng-template>
+        <!-- False -->
+        <ng-template #notZero>
+          <option
+            *ngFor="let page of [].constructor(escapeRoomsList.length/pageSize - (escapeRoomsList.length/pageSize) % 1 + 1); let i = index"
+            [ngValue]="i+1">
+              {{ i+1 }}
+          </option>
+        </ng-template>
+      </select>
+    </div>
 
-    <!-- If -->
-    <ng-container *ngIf="escapeRoomsList.length/pageSize % 1 === 0; then zero; else notZero"></ng-container>
-    <!-- True -->
-    <ng-template #zero>
-      <option
-        *ngFor="let page of [].constructor(escapeRoomsList.length/pageSize); let i = index"
-        [ngValue]="i+1">
-          {{ i+1 }}
-      </option>
-    </ng-template>
-    <!-- False -->
-    <ng-template #notZero>
-      <option
-        *ngFor="let page of [].constructor(escapeRoomsList.length/pageSize - (escapeRoomsList.length/pageSize) % 1 + 1); let i = index"
-        [ngValue]="i+1">
-          {{ i+1 }}
-      </option>
-    </ng-template>
-
-  </select>
+  </div>
 
 </div>
