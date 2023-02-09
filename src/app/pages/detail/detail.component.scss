@@ -1,0 +1,31 @@
+@import 'src/styles/shared.scss';
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  background-color: $TRUE_WHITE;
+  margin: $NORMAL_MARGIN;
+
+  img {
+    width: 200px;
+  }
+
+  h2 {
+    // Mobile first
+    font-size: $MOBILE_TITLES;
+
+    @media screen and (min-width: $LANDSCAPE) {
+      font-size: $LANDSCAPE_TITLES;
+    }
+  }
+
+  p {
+    // Mobile first
+    font-size: $MOBILE_DESCRIPTION;
+
+    @media screen and (min-width: $LANDSCAPE) {
+      font-size: $LANDSCAPE_DESCRIPTION;
+    }
+  }
+  
+}

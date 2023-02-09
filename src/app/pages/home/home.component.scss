@@ -1,0 +1,16 @@
+.escape-rooms {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  app-section {
+    width: 50%;
+  }
+}
+
+.web-behaviour {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 75%;
+}

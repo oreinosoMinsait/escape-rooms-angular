@@ -1,3 +1,12 @@
-<div class="list" *ngIf="(escapeRoom$ | async) as escapeRoom">
-  {{ escapeRoom.name }}
+<div class="detail" *ngIf="(escapeRoom$ | async) as escapeRoom">
+
+
+  <img [src]="escapeRoom.image_url" [alt]="escapeRoom.name">
+
+  <h2>{{ escapeRoom.name }}</h2>
+
+  <p>{{ escapeRoom.address }}</p>
+
+  <p>{{ escapeRoom.description }}</p>
+
 </div>

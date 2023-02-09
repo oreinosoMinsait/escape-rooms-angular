@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Section } from '../models/section.models';
 
 @Component({
   selector: 'app-section',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./section.component.scss']
 })
 export class SectionComponent {
+
+  @Input() sectionSon?: Section;
 
 }

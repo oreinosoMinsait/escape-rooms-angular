@@ -8,7 +8,7 @@
   margin: $NORMAL_MARGIN;
 
   // Mobile first
-  font-size: $LANDSCAPE_DESCRIPTION;
+  font-size: $MOBILE_DESCRIPTION;
 
   @media screen and (min-width: $LANDSCAPE) {
     font-size: $LANDSCAPE_DESCRIPTION;

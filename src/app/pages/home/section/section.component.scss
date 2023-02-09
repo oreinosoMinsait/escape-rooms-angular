@@ -1,0 +1,28 @@
+@import 'src/styles/shared.scss';
+
+section {
+  background-color: $TRUE_WHITE;
+  border-radius: $HARD_RADIUS;
+
+  h2 {
+    text-align: center;
+
+    // Mobile first
+    font-size: $MOBILE_TITLES;
+
+    @media screen and (min-width: $LANDSCAPE) {
+      font-size: $LANDSCAPE_TITLES;
+    }
+  }
+
+  p {
+    text-align: center;
+
+    // Mobile first
+    font-size: $MOBILE_DESCRIPTION;
+
+    @media screen and (min-width: $LANDSCAPE) {
+      font-size: $LANDSCAPE_DESCRIPTION;
+    }
+  }
+}

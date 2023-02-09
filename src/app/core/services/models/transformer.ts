@@ -7,6 +7,7 @@ export function transformEscapeRooms(apiEscapeRooms: ApiEscapeRoomI[]): EscapeRo
       name: room.name,
       image_url: room.avatar,
       address: room.location,
+      description: room.description,
       id: room.id,
     })
   )
@@ -18,6 +19,7 @@ export function transformEscapeRoomId(apiEscapeRoom: ApiEscapeRoomI): EscapeRoom
     name: apiEscapeRoom.name,
     image_url: apiEscapeRoom.avatar,
     address: apiEscapeRoom.location,
+    description: apiEscapeRoom.description,
     id: apiEscapeRoom.id,
   }
 

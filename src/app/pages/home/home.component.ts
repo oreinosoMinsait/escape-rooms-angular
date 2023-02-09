@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Section } from './models/section.models';
+import { sections } from './sections';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+
+  public sectionsFather: Section[] = sections;
 
 }

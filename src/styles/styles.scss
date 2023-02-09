@@ -7,7 +7,7 @@ body {
   font-family: $FONT_TYPE;
 
   // Establecer máximo ancho de contenido
-  @media screen and (min-width: $DESKTOP) {
-    max-width: 1200px;
+  @media screen and (min-width: $WIDTH_CONTENT) {
+    max-width: $WIDTH_CONTENT;
   }
 }
